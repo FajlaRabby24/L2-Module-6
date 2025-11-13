@@ -1,4 +1,4 @@
-// constraint : strict rules deya
+// * constraint : strict rules deya
 
 type Stuent = { id: number; name: string; dateOfBirth: string; class: string };
 
