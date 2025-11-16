@@ -8,29 +8,64 @@ type Product = {
   color?: string;
 };
 
-// * Pick<>
+/* 
+  ? Pick<> -> 
+  type ProductSummary = {
+   id: number;
+   name: string;
+   price: string;
+}
+*/
 type ProductSummary = Pick<Product, "id" | "name" | "price">;
 
-// * Omit<>
+/* 
+  ? Omit<> ->
+  type ProductWithoutStock = {
+    id: number;
+    name: string;
+  }
+*/
 type ProductWithoutStock = Omit<Product, "stock" | "color" | "price">;
 
-// * Required<>
+/*
+  ? Required<>
+  type ProductRequired = {
+    id: number;
+    name: string;
+    price: string;
+    stock: number;
+    color: string;
+  }
+  */
 type ProductRequired = Required<Product>;
 
-const product: ProductRequired = {
-  id: 222,
-  name: "mouse",
-  price: "20",
-  stock: 100,
-  color: "blue",
-};
-
-// * Partial<>
+/*
+  ? Partial<>
+  type OptionProduct = {
+    id?: number;
+    name?: string;
+    price?: string;
+    stock?: number;
+    color?: string;
+  }
+*/
 type OptionProduct = Partial<Product>;
 
-// * Readonly<>
+/*
+ ? Readonly<>
+ type ProductreadOnly = {
+    readonly id: number;
+    readonly name: string;
+    readonly price: string;
+    readonly stock: number;
+    readonly color?: string;
+  }
+*/
 type ProductreadOnly = Readonly<Product>;
 
-// * Record<>
+/* 
+  ? Record<>
+  * সব key string, value যেকোনো টাইপ -> unknown
+*/
 const emptyObj: Record<string, unknown> = {};
-emptyObj.price = 20;
+emptyObj.price = true;
